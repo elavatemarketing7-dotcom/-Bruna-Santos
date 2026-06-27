@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700;800&family=Caveat:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-signature: "Cormorant Garamond", Georgia, serif;
+  
+  --color-gold-50: #fbf9f2;
+  --color-gold-100: #f5eed4;
+  --color-gold-200: #eadcb2;
+  --color-gold-300: #dec382;
+  --color-gold-400: #d1a952;
+  --color-gold-500: #D4AF37;
+  --color-gold-600: #b8952b;
+  --color-gold-700: #947721;
+  --color-gold-800: #6e5917;
+  --color-gold-900: #4a3c0e;
+}
+
+/* Custom styles */
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Glass Card class from Sleek Interface design */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.04);
+}
+
+/* Hide scrollbar for clean horizontal scroll if needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes marquee {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.animate-marquee-slow {
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee-slow-reverse {
+  animation: marquee-reverse 40s linear infinite;
+}
+
+.animate-marquee-medium {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee-medium-reverse {
+  animation: marquee-reverse 25s linear infinite;
+}
+
+/* Shimmer pulse button with Classic Gold color */
+@keyframes buttonPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+  50% { transform: scale(1.02); box-shadow: 0 0 15px 4px rgba(212, 175, 55, 0.2); }
+}
+
+.animate-btn-pulse {
+  animation: buttonPulse 3s infinite ease-in-out;
+}
+
